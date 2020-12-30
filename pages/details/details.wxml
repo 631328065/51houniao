@@ -1,0 +1,85 @@
+<!--pages/details/details.wxml-->
+<!-- 导入模板 -->
+<import src="../templates/templates.wxml"></import>
+
+<!-- 头部 -->
+<view class="header_nav" hidden="{{showNav}}">
+  <view class="clearfix">
+    <block wx:for="{{headerNav}}" wx:key="headerNav">
+      <view class="list">
+        <text class="{{active[index]}}">{{item}}</text>
+      </view>
+    </block>
+  </view>
+</view>
+<view class="banner">
+  <image src="{{pro_pic_url}}"></image>
+  <view class="label"
+    style="background: url(http://www.51houniao.com/wx/customer/classic/images/down_icon.png) center center no-repeat;">
+    <text>定制</text>
+  </view>
+  <view class="title">
+    <text>{{pro_title}}</text>
+  </view>
+</view>
+
+<!-- journey模板 -->
+<view class="journey">
+  <view class="introduce">
+    <template is="just_sb" data="{{product:product_season,title_imge:'../../images/太阳.png',title:'适宜季节'}}"></template>
+    <template is="just_sb" data="{{product:product_type,title_imge:'../../images/主题.png',title:'主题'}}"></template>
+  </view>
+  <view class="introduce">
+    <template is="just_sb"
+      data="{{children_price:children_price,man_price:man_price,title_imge:'../../images/钱.png',title:'单价'}}"></template>
+    <template is="just_sb" data="{{title_imge:'../../images/人数.png',title:'人数'}}"></template>
+    <template is="just_sb" data="{{title_imge:'../../images/时间.png',title:'日期',text:out_time}}"></template>
+    <template is="just_sb" data="{{title_imge:'../../images/飞机.png',title:'出发',text:out_time}}"></template>
+  </view>
+  <view class="introduce">
+    <template is="just_sb"
+      data="{{title_imge:'../../images/时间.png',title:'周期',routing_dat:routing_dat,routing_nigth:routing_nigth}}"></template>
+    <template is="just_sb" data="{{title_imge:'../../images/位置.png',title:'国家',product_country:country}}"></template>
+  </view>
+  <view class="introduce">
+    <template is="just_sb"
+      data="{{title_imge:'../../images/商家.png',title:'商家',sellerUserName:sellerUserName}}"></template>
+  </view>
+</view>
+
+<!-- 静态定制旅行 -->
+<view class="what-custom-container">
+  <view class="custom-box">
+    <text>定制旅行，有什么不同？</text><text>></text>
+  </view>
+</view>
+
+<!-- 行程亮点 -->
+<template is="bright" data="{{bright}}"></template>
+
+<!-- 横线 -->
+<view class="line"></view>
+
+<!-- 行程概要 -->
+<template is="trip" data="{{product_trip_head}}"></template>
+
+<!-- 横线 -->
+<view class="line"></view>
+
+<!-- 行程详情 -->
+<template is="trip_detailed"
+  data="{{product_trip_details:product_trip_details,sHeight:sHeight,isShow:isShow}}"></template>
+
+<!-- 横线 -->
+<view class="line" style="margin-top:10px"></view>
+
+<!-- 价格说明 -->
+<view class="price_box">
+  <view class="trip_title">价格说明</view>
+  <detailsTab tabData="{{tabData}}" man_price="{{man_price}}" children_price="{{children_price}}"
+    pon_num_end="{{pon_num_end}}" pon_num_start="{{pon_num_start}}"></detailsTab>
+  <!-- 横线 -->
+  <view class="line" style="margin-top:10px"></view>
+  <template is="include_price" data="{{th1:'价格包括',th2:'备注',include_price:include_price}}"></template>
+  <template is="include_price" data="{{th1:'价格不包括',th2:'备注',include_price:no_include_price}}"></template>
+</view>

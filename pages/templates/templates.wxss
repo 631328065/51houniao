@@ -1,0 +1,153 @@
+/* pages/templates/templates.wxss */
+/*推荐模板*/
+.recom {
+  display: flex;
+  height: 203.166rpx;
+  margin: 10rpx;
+  padding: 24rpx 0;
+  font-size: 14px;
+  border-bottom: 1px dashed #c0c0c0;
+}
+
+.recom_imge {
+  width: 40%;
+  height: 100%;
+}
+
+.recom_imge image {
+  width: 100%;
+  height: 100%;
+}
+
+.recom_content {
+  width: 60%;
+  height: 100%;
+  padding-left: 25rpx;
+  font-size: 14px;
+}
+
+.recom_content h2 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+.recom_content .icon {
+  margin: 20rpx 0;
+  padding: 2rpx 0;
+  background: #e9e9e9;
+  border-radius: 4px;
+  color: #484848;
+}
+
+.recom_content .icon image {
+  width: 24rpx;
+  height: 28rpx;
+  margin-left: 10rpx;
+  margin-top: 6rpx;
+}
+
+.recom_content .icon text {
+  margin-left: 20rpx;
+  font-size: 10px;
+}
+
+.recom_content .m_time {
+  color: #858585;
+  font-size: 12px;
+  display: flex;
+}
+
+.recom_content .m_time text {
+  flex: 1;
+}
+
+/* 猜你喜欢模板 */
+.you_like .recom {
+  box-sizing: border-box;
+  height: 120rpx;
+  line-height: 120rpx;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80rpx;
+  border-top: 6px solid #f2f2f2;
+  border-bottom: 1px solid #b9b9b9;
+  color: #858585
+}
+
+.recom>text {
+  font-size: 16px;
+}
+
+.like_item_box {
+  padding: 0 20rpx;
+}
+
+.like_item {
+  width: 47%;
+  display: inline-block;
+  margin-right: 20rpx;
+}
+
+.like_item_box .item {
+  box-shadow: 10rpx 10rpx 0 #f2f2f2;
+  border: 1px solid #f2f2f2;
+  margin: 20rpx 0;
+}
+
+.item_imge {
+  position: relative;
+  width: 88%;
+  height: 154rpx;
+}
+
+.item_imge>image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.item_imge .icon>image {
+  max-width: 26rpx;
+  max-height: 30rpx
+}
+
+.item_imge .icon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 10px;
+  color: #fff;
+}
+
+.item .h2 {
+  font-size: 12px;
+  padding: 10rpx 0;
+}
+
+.item .position {
+  margin: 6rpx 0 14rpx 10rpx;
+  padding: 4rpx 0;
+  background: #e9e9e9;
+  border-radius: 4px;
+  color: #484848;
+}
+
+.position image {
+  width: 22rpx;
+  height: 26rpx;
+}
+
+.position text {
+  font-size: 10px;
+  margin-right: 12rpx;
+}
+
+.price {
+  font-size: 10px;
+  color: #858585;
+  margin: 0 10rpx 10rpx;
+}
+
+.price image {
+  width: 24rpx;
+  height: 28rpx;
+}

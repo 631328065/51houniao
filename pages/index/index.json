@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "swiperItem": "../../components/swiper/swiper",
+    "activeItem": "../../components/active/active"
+  }
+}

@@ -1,0 +1,42 @@
+<!-- 导入模板 -->
+<import src="../templates/templates.wxml"></import>
+
+<!-- 轮播图组件 -->
+<swiperItem list="{{swiperList}}"></swiperItem>
+
+<!-- 静态图标 -->
+<view class="header_icon">
+  <image src="../../images/title-img.png"></image>
+</view>
+
+<!-- 静态推荐 -->
+<view class="tuijian">
+  <text>推荐</text>
+  <text>∨</text>
+</view>
+
+<!-- 推荐模板 -->
+<template is="tuijian" data="{{recomList}}"></template>
+
+<!-- 招募活动 -->
+<activeItem list="{{activityList}}"></activeItem>
+
+<!-- 静态 -->
+<view class="sure">
+  <block wx:for="{{sure}}" wx:key='item'>
+    <view class="item">
+      <view class="icon">
+        <image src="../../images/对.png"></image>
+      </view>
+      <text>{{item}}</text>
+    </view>
+  </block>
+</view>
+
+<!-- 猜你喜欢 -->
+<view class="you_like">
+  <view class="recom">
+    <text>猜你喜欢</text>
+  </view>
+  <template is="you_like" data="{{youLike}}"></template>
+</view>

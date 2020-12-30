@@ -1,0 +1,38 @@
+<view class="offer_price_tab_box">
+  <view class="price_tab">
+    <view class="table">
+      <view class="tr bg-w">
+        <view class="th"></view>
+        <view class="th">报价/人</view>
+        <view class="th ">人数</view>
+      </view>
+      <block wx:for="{{tabData}}" wx:key="tabData">
+        <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+          <view class="td">成人</view>
+          <view class="td">￥{{man_price}}</view>
+          <view class="td">
+            <text class="td_icon_edd" bindtap="tdEdd"></text>
+            {{pon_num_end}}
+            <text class="td_icon_add" bindtap="tdAdd"></text>
+          </view>
+        </view>
+        <view class="tr" wx:else>
+          <view class="td">儿童</view>
+          <view class="td">￥{{children_price}}</view>
+          <view class="td">
+            <text class="td_icon_edd"></text>
+            0
+            <text class="td_icon_add"></text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="all_offer">
+    总报价金额<text class="huangse_c">￥<text class="all_price">{{man_price*pon_num_end}}</text></text>
+    <text class="zhuyi">
+      *儿童指12岁以下且不占床位。
+      *以上价格均为预估报价，准确报价需确认出发日期后才能确定。
+    </text>
+  </view>
+</view>

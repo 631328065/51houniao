@@ -1,0 +1,88 @@
+/* components/tab/tab.wxss */
+/* 价格说明 */
+.price_box {
+  margin-bottom: 24rpx;
+  position: relative;
+}
+
+.offer_price_tab_box {
+  padding: 0 36rpx 24rpx;
+  border-bottom: 1px dashed #e1e0e0;
+}
+
+.price_tab {
+  width: 100%;
+  border: 1px solid #dbdada;
+  display: table;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table {
+  border: 0px solid darkgray;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+}
+
+.td {
+  width: 40%;
+  justify-content: center;
+  text-align: center;
+}
+
+.bg-w {
+  background: snow;
+}
+
+.bg-g {
+  background: #E6F3F9;
+}
+
+.th {
+  width: 40%;
+  justify-content: center;
+  background: #ccc;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
+
+.td_icon_edd {
+  display: inline-block;
+  background: url(http://www.51houniao.com/wx/customer/classic/images/small_icon_list_x.png) no-repeat;
+  background-position: -120rpx -42rpx;
+  width: 40rpx;
+  height: 40rpx;
+  background-size: 160rpx auto;
+  vertical-align: middle;
+}
+
+.td_icon_add {
+  display: inline-block;
+  background: url(http://www.51houniao.com/wx/customer/classic/images/small_icon_list_x.png) no-repeat;
+  background-position: -120rpx 0;
+  width: 40rpx;
+  height: 40rpx;
+  background-size: 160rpx auto;
+  vertical-align: middle;
+}
+
+.all_offer {
+  padding: 24rpx 0;
+}
+
+.huangse_c {
+  color: #f49155;
+}
+
+.zhuyi {
+  color: #C6C6C6;
+  font-size: 12px;
+}

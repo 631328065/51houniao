@@ -1,0 +1,39 @@
+<!--components/active/active.wxml-->
+<view class="active">
+  <view class="title">
+    <view class="title_text">
+      <view>招募活动</view>
+      <view>旅途中，邂逅TA，邂逅世界的美</view>
+    </view>
+  </view>
+  <view class="page-section page-section-spacing swiper">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{list}}" wx:key="swiper">
+        <swiper-item>
+          <view class="swiper-item">
+            <image src="{{item.pro_pic_url}}"></image>
+            <view class="swiper_index">
+              <text>{{index+1}}</text>/{{list.length}}
+            </view>
+            <view class="item_content">
+              <text>{{item.pro_title}}</text>
+              <view class="icon">
+                <image src="../../images/n-4.png"></image>
+                <text>{{item.country}}</text>
+              </view>
+              <view class="time">
+                <text>{{item.out_time}}</text>
+              </view>
+              <view class="price">
+                <image src="../../images/时间.png"></image>
+                <text style="margin-right: 20rpx;">{{item.routing_data}}天{{item.routing_nigth}}晚</text>
+                <image src="../../images/金钱.png"></image>
+                <text>{{item.amount}}元</text>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>

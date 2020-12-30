@@ -1,0 +1,37 @@
+<!--pages/sreach/sreach.wxml-->
+<view class="search_div_box">
+  <view class="search_box">
+    <i class="iconfont icon-sousuo search_btn"></i>
+    <input type="text" class="input_style" placeholder="请输入您想去的国家或城市" model:value="{{sreachInpValue}}"
+      bindinput="sreachCountry"></input>
+  </view>
+  搜索
+  <!-- 洲||季节 -->
+  <view class="content">
+    <view class="search_tab">
+      <view class="clearfix">
+        <view class="{{tab_active}}" bindtap="hangdelZhou">
+          <text>洲</text>
+        </view>
+        <view class="{{click_season}}" bindtap="hangdelJijie">
+          <text>季节</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 各大洲 -->
+  <view class="search_title">
+    <view class="continent_ul">
+      <view class="tab_active">
+        <text>欧洲</text>
+      </view>
+      <view class="">
+        <text>欧洲</text>
+      </view>
+      <view class="">
+        <text>欧洲</text>
+      </view>
+    </view>
+  </view>
+</view>

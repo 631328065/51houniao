@@ -1,0 +1,278 @@
+<!--pages/templates/templates.wxml-->
+<!-- 推荐模板 -->
+<template name="tuijian">
+  <block wx:for="{{recomList}}" wx:key="recommendId">
+    <view class="recom" bindtap="toDetails" data-productId="{{item.productId}}"
+      data-sellerUserName="{{item.sellerUserName}}">
+      <view class="recom_imge">
+        <image src="{{item.proPicUrl}}"></image>
+      </view>
+      <view class="recom_content">
+        <h2>{{item.proTitle}}</h2>
+        <view class="icon">
+          <image src="../../images/n-4.png"></image>
+          <text>{{item.country}}</text>
+        </view>
+        <view class="m_time">
+          <text>{{item.routingDat}}天{{item.routingNigth}}晚</text>
+          <text>{{item.amount}}元起</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</template>
+
+<!-- 猜你喜欢模板 -->
+<template name="you_like">
+  <view class="like_item_box">
+    <block wx:for="{{youLike}}" wx:key="youLike">
+      <view class="like_item">
+        <view class="item">
+          <view class="item_imge">
+            <image src="{{item.proPicUrl}}"></image>
+            <view class="icon">
+              <image src="../../images/爱心.png"></image>
+              <text>{{item.collectionNum}}</text>
+            </view>
+          </view>
+          <text class="h2">{{item.proTitle}}</text>
+          <view class="position">
+            <image src="../../images/n-4.png"></image>
+            <text>{{item.country}}</text>
+          </view>
+          <view class="price">
+            <image src="../../images/时间.png"></image>
+            <text style="margin-right: 20rpx;">{{item.routingDat}}天{{item.routingNigth}}晚</text>
+            <image src="../../images/金钱.png"></image>
+            <text>{{item.amount}}元</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</template>
+
+<!-- just_sb模板 -->
+<template name="just_sb">
+  <view class="season">
+    <view class="title">
+      <image src="{{title_imge}}"></image>
+      <text>{{title}}</text>
+    </view>
+    <!-- 适宜季节 -->
+    <block wx:if="{{title == '适宜季节'}}">
+      <view class="content" style="margin-left:84rpx;">
+        <block wx:for="{{product}}" wx:key="product">
+          <block wx:if="{{index == product.length-1}}">
+            <text>{{item.season}}</text>
+          </block>
+          <block wx:else>
+            <text>{{item.season}}、</text>
+          </block>
+        </block>
+      </view>
+    </block>
+    <!-- 主题 -->
+    <block wx:elif="{{title == '主题'}}">
+      <view class="content" style="margin-left:32rpx;">
+        <block wx:for="{{product}}" wx:key="product">
+          <block wx:if="{{index == product.length-1}}">
+            <text>{{item.type}}</text>
+          </block>
+          <block wx:else>
+            <text>{{item.type}}、</text>
+          </block>
+        </block>
+      </view>
+    </block>
+
+    <!-- 单价 -->
+    <block wx:elif="{{title == '单价'}}">
+      <view class="content" style="box-sizing: border-box;margin-left: 120rpx;padding: 20rpx 0;line-height: 60rpx;">
+        <view class="man_price" style="border-left:1px solid #ccc;padding-left:100rpx;padding-right:20rpx;">
+          <text>{{man_price}}元起</text>
+        </view>
+        <view class="children_price" style="border-left:1px solid #ccc;padding-left:100rpx;padding-right:20rpx;">
+          <text>{{children_price}}元起</text>
+        </view>
+      </view>
+    </block>
+
+    <!-- 人数 -->
+    <block wx:elif="{{title == '人数'}}">
+      <view class="content" style="box-sizing: border-box;margin-left: 120rpx;padding: 20rpx 0;line-height: 60rpx;">
+        <view class="man_price" style="border-left:1px solid #ccc;padding-left:144rpx;padding-right:20rpx;">
+          <text>6 成人 ></text>
+        </view>
+        <view class="children_price" style="border-left:1px solid #ccc;padding-left:100rpx;padding-right:20rpx;">
+          <text>0 儿童 ></text>
+        </view>
+      </view>
+    </block>
+
+    <!-- 日期或者出发 -->
+    <block wx:elif="{{title == '日期' || title == '出发'}}">
+      <view class="content" style="text-align: right;">
+        <text>{{text}}</text>
+      </view>
+    </block>
+
+    <!-- 周期 -->
+    <block wx:elif="{{title == '周期'}}">
+      <view class="content" style="text-align: right;">
+        <text>{{routing_dat}}天{{routing_nigth}}晚</text>
+      </view>
+    </block>
+
+    <!-- 国家 -->
+    <block wx:elif="{{title == '国家'}}">
+      <view class="country" style="flex:1;text-align: right;font-size:11px">
+        <block wx:for="{{product_country}}" wx:key='product_country'>
+          <block wx:if="{{index == product_country.length-1}}">
+            <text>{{item.country}}</text>
+          </block>
+          <block wx:else>
+            <text>{{item.country}},</text>
+          </block>
+        </block>
+      </view>
+    </block>
+
+    <!-- 商家 -->
+    <block wx:if="{{title == '商家'}}">
+      <view class="content" style="text-align: right;">
+        <text>{{sellerUserName}}></text>
+      </view>
+    </block>
+  </view>
+</template>
+
+<!-- 行程亮点 -->
+<template name="bright">
+  <view class="lightSpot_box">
+    <view class="lightTitle">行程亮点</view>
+    <block wx:for="{{bright}}" wx:key="bright">
+      <view class="lightSpot">
+        <view class="lImges">
+          <text class="icon"></text>
+        </view>
+        {{item.bright}}
+      </view>
+    </block>
+  </view>
+</template>
+
+<!-- 行程概要 -->
+<template name="trip">
+  <view class="trip_box">
+    <view class="trip_title">行程概要</view>
+    <block wx:for="{{product_trip_head}}" wx:key="product_trip_head">
+      <view class="summary">
+        <view class="date_wrap">
+          <view class="date_icon">D{{index+1}}</view>
+          <view class="date_content">
+            <view class="city_list">{{item.trip_way}}</view>
+            <view class="stay_land">住宿地：{{item.stay_name}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</template>
+
+<!-- 行程详情 -->
+<template name="trip_detailed">
+  <view class="trip_detailed" style="height: {{sHeight}}">
+    <view class="trip_title">行程详情</view>
+    <block wx:for="{{product_trip_details}}" wx:key='product_trip_details'>
+      <view class="detailed_content">
+        <view class="detailed_day">
+          <view class="detailed_title">
+            <view class="day_text">day{{item.day}}</view>
+          </view>
+          <view class="detailed_type">
+            <text>{{item.newProductTripWayVO.tripCityVos[0].cityName}}</text>
+            <i class="iconfont icon-feiji800"></i>
+            <text>{{item.newProductTripWayVO.tripCityVos[1].cityName}}</text>
+          </view>
+          <view class="flight_info_box">
+            <view class="flight_info">
+              <view class="flight_title_box">
+                <view class="flight_title">
+                  ●<text>参考航班1</text>●
+                </view>
+              </view>
+              <view class="flight_cont">
+                <view class="flight">
+                  <view class="flight_item">
+                    <view class="flight_content">01:40</view>
+                    <text>北京</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="detailed_article">
+          <view class="p">
+            {{item.product_trip_poi[0].emotion_info}}
+          </view>
+        </view>
+        <view class="detailed_arrange">
+          <view class="arrange_list">
+            <view class="arrange_icon_box">
+              <text class="arrange_icon"></text>
+            </view>
+            <view class="arrange_content">
+              <block wx:for="{{item.product_trip_tag}}" wx:key="tag" wx:for-item="iTag">
+                <text>{{iTag.tag_name}}</text>
+              </block>
+            </view>
+          </view>
+          <view class="arrange_type">
+            <view class="icon_type">
+              <text></text>
+            </view>
+            <text>{{item.stay_name}}</text>
+          </view>
+        </view>
+        <!-- 轮播图 -->
+        <view class="page-section page-section-spacing swiper" style="text-align:center">
+          <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}"
+            duration="{{duration}}">
+            <block wx:for="{{item.product_trip_poi_pic}}" wx:key='swiper' wx:for-item="iSwiper">
+              <swiper-item>
+                <view class="swiper-item">
+                  <image src="{{iSwiper.photo_url}}"></image>
+                </view>
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+      </view>
+    </block>
+    <view class="showmore" bindtap="showMore" hidden="{{isShow}}">
+      <text>查看更多详情↓</text>
+    </view>
+  </view>
+</template>
+
+<!-- 价格包括或者不包括 -->
+<template name="include_price">
+  <view class="table" style="margin-top:40px">
+    <view class="tr">
+      <view class="th">{{th1}}</view>
+      <view class="th ">{{th2}}</view>
+    </view>
+    <block wx:for="{{include_price}}" wx:key="no_include_price">
+      <view class="tr" wx:if="{{index % 2 == 0}}">
+        <view class="td">{{item.price_dec}}</view>
+        <view class="td">{{item.price_remark}}</view>
+      </view>
+      <view class="tr" wx:else>
+        <view class="td bg-w">{{item.price_dec}}</view>
+        <view class="td bg-w">{{item.price_remark}}</view>
+      </view>
+    </block>
+  </view>
+</template>

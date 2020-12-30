@@ -1,0 +1,116 @@
+/* pages/sreach/sreach.wxss */
+@import '../../font/iconfont.wxss';
+
+page {
+  background-color: #f2f2f2;
+}
+
+.search_div_box {
+  height: 112rpx;
+  border-top: 1px solid #dddcdc;
+  border-bottom: 1px solid #dddcdc;
+  width: 100%;
+  text-align: center;
+  line-height: 112rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: #f2f2f2;
+}
+
+.search_box {
+  width: 76%;
+  height: 70rpx;
+  line-height: 80rpx;
+  background: #fff;
+  border-radius: 20px;
+  text-align: left;
+  padding: 0 2%;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.search_btn {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.input_style {
+  display: inline-block;
+  width: 70%;
+  border: none;
+  background-color: transparent;
+  padding-left: 18rpx;
+  font-family: "微软雅黑";
+}
+
+.content {
+  position: relative;
+  padding-top: 112rpx;
+}
+
+.search_tab {
+  width: 100%;
+  position: fixed;
+  top: 116rpx;
+  left: 0;
+  text-align: center;
+  background: #f2f2f2;
+  z-index: 99;
+}
+
+.tab_active {
+  width: 30%;
+  display: inline-block;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #445356;
+  text-align: center;
+}
+
+.tab_active text {
+  border-bottom: 3px solid #445356;
+  padding: 0 10rpx;
+}
+
+.click_season {
+  width: 30%;
+  display: inline-block;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #445356;
+  text-align: center;
+}
+
+.search_title {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin-bottom: 24rpx;
+  position: fixed;
+  top: 304rpx;
+  left: 0;
+  z-index: 99;
+}
+
+.continent_ul {
+  background: #cbcaca;
+  font-size: 14px;
+}
+
+.continent_ul view {
+  display: inline-block;
+  padding: 4rpx 14rpx;
+}
+
+.tab_active {
+  color: #fff;
+}
+
+.tab_active text {
+  background: #878e90;
+  border-radius: 4px;
+}
