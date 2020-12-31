@@ -91,7 +91,7 @@ page {
   text-align: center;
   margin-bottom: 24rpx;
   position: fixed;
-  top: 304rpx;
+  top: 228rpx;
   left: 0;
   z-index: 99;
 }
@@ -99,6 +99,8 @@ page {
 .continent_ul {
   background: #cbcaca;
   font-size: 14px;
+  color: #fff;
+
 }
 
 .continent_ul view {
@@ -106,11 +108,63 @@ page {
   padding: 4rpx 14rpx;
 }
 
-.tab_active {
-  color: #fff;
-}
-
-.tab_active text {
+.ul_tab_active text {
   background: #878e90;
   border-radius: 4px;
+  padding: 6rpx 14rpx;
+}
+
+.search_cont {
+  text-align: center;
+  padding: 0 24rpx;
+  margin-top: 300rpx;
+}
+
+.continent_content_list {
+  display: inline-block;
+  padding: 10rpx 28rpx;
+  border: 1px solid #cdcdcd;
+  border-radius: 20px;
+  margin: 28rpx 10rpx;
+  color: #9b9b9b;
+}
+
+.season_spring {
+  display: inline-block;
+  text-align: center;
+  padding: 0 24rpx 24rpx;
+  margin: 340rpx 0 24rpx;
+  cursor: pointer;
+}
+
+.product_img {
+  width: 702rpx;
+}
+
+.product_img image {
+  display: block;
+  max-width: 100%;
+}
+
+.product_img {
+  width: 702rpx;
+}
+
+.product_img text {
+  color: #919292;
+  line-height: 66rpx;
+}
+
+.pro_news_list text {
+  padding: 0 6px;
+}
+
+.pro_news_list text i {
+  display: inline-block;
+  width: 24rpx;
+  height: 24rpx;
+  background: url(http://www.51houniao.com/wx/customer/classic/images/small_icon_28.png) no-repeat;
+  background-size: 196rpx auto;
+  background-position: -112rpx -264rpx;
+  vertical-align: middle;
 }

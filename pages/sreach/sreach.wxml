@@ -2,8 +2,7 @@
 <view class="search_div_box">
   <view class="search_box">
     <i class="iconfont icon-sousuo search_btn"></i>
-    <input type="text" class="input_style" placeholder="请输入您想去的国家或城市" model:value="{{sreachInpValue}}"
-      bindinput="sreachCountry"></input>
+    <input type="text" class="input_style" placeholder="请输入您想去的国家或城市" model:value="{{sreachInpValue}}"></input>
   </view>
   搜索
   <!-- 洲||季节 -->
@@ -19,19 +18,60 @@
       </view>
     </view>
   </view>
+</view>
 
+<!-- 洲 -->
+<block wx:if="{{continents.length > 0}}">
   <!-- 各大洲 -->
   <view class="search_title">
     <view class="continent_ul">
-      <view class="tab_active">
-        <text>欧洲</text>
+      <block wx:for="{{continents}}" wx:key="continents">
+        <view class="{{c_ul_tab_active[index]}}" bindtap="hangdelContinents" data-continentsId="{{index}}"
+          data-continents="{{item}}">
+          <text>{{item}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 各国家 -->
+  <view class="search_cont">
+    <view class="clearfix continent_content">
+      <block wx:for="{{continentsCountry}}" wx:key="continentsCountry">
+        <view class="continent_content_list">
+          <text>{{item.country}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</block>
+<block wx:else>
+  <!-- 各季节 -->
+  <view class="search_title">
+    <view class="continent_ul">
+      <block wx:for="{{season}}" wx:key="season">
+        <view class="{{s_ul_tab_active[index]}}" bindtap="hangdelSeason" data-seasonId="{{index}}"
+          data-season="{{item}}">
+          <text>{{item}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 季节 -->
+  <view class="custom_product_list">
+    <view class="season_spring">
+      <view class="product_img">
+        <image src="https://pic.51houniao.com/3be7fb4100c246dca3cdb717fef49fd1.jpg"></image>
       </view>
-      <view class="">
-        <text>欧洲</text>
+      <view class="product_img">
+        <text>日本干细胞抗衰健康之旅</text>
       </view>
-      <view class="">
-        <text>欧洲</text>
+      <view class="pro_news_list">
+        <text>
+          <i>日本</i>
+          <em>|</em>
+        </text>
       </view>
     </view>
   </view>
-</view>
+</block>
