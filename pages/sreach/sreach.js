@@ -13,7 +13,8 @@ Page({
     c_ul_tab_active: ["ul_tab_active", "", "", "", "", ""],
     s_ul_tab_active: ["ul_tab_active", "", "", "", "", ""],
     continentsCountry: [],
-    season: ["春意阑珊", "盛夏果实", "秋来秋去", "冬之恋曲"]
+    season: ["春意阑珊", "盛夏果实", "秋来秋去", "冬之恋曲"],
+    matchedProducts: []
   },
 
   //洲
@@ -30,7 +31,7 @@ Page({
     this.setData({
       tab_active: "click_season",
       click_season: "tab_active",
-      continents: []
+      continents: [],
     });
   },
 
@@ -60,6 +61,16 @@ Page({
     this.setData({
       s_ul_tab_active: new_s_ul_tab_active
     });
+
+    http("requirement/request/getMatchedProducts", "post", {
+        product_type: 1,
+        request_season: [season]
+      })
+      .then(res => {
+        this.setData({
+          matchedProducts: res.matchedProducts
+        });
+      });
   },
 
   /**
@@ -71,6 +82,17 @@ Page({
       .then(res => {
         this.setData({
           continentsCountry: res
+        });
+      });
+
+    //首次获取季节数据
+    http("requirement/request/getMatchedProducts", "post", {
+        product_type: 1,
+        request_season: ["春意阑珊"]
+      })
+      .then(res => {
+        this.setData({
+          matchedProducts: res.matchedProducts
         });
       });
   },

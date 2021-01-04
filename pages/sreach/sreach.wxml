@@ -60,18 +60,26 @@
   <!-- 季节 -->
   <view class="custom_product_list">
     <view class="season_spring">
-      <view class="product_img">
-        <image src="https://pic.51houniao.com/3be7fb4100c246dca3cdb717fef49fd1.jpg"></image>
-      </view>
-      <view class="product_img">
-        <text>日本干细胞抗衰健康之旅</text>
-      </view>
-      <view class="pro_news_list">
-        <text>
-          <i>日本</i>
-          <em>|</em>
-        </text>
-      </view>
+      <block wx:for="{{matchedProducts}}" wx:key="matchedProducts">
+        <view class="season_list">
+          <view class="product_img">
+            <image src="{{item.pro_pic_url}}"></image>
+          </view>
+          <view class="product_img">
+            <text>{{item.pro_title}}</text>
+          </view>
+          <view class="pro_news_list">
+            <text class="icon" style="background-position: -112rpx -264rpx;"></text>
+            <text class="span">{{item.country}}</text>
+            <em>|</em>
+            <text class="icon" style="background-position: -112rpx -290rpx;"></text>
+            <text class="span">{{item.routing_data}}天{{item.routing_nigth}}晚</text>
+            <em>|</em>
+            <text class="icon" style="font-size: 12px;background-position: -108rpx -12rpx;"></text>
+            <em>{{item.collection_num}}</em>
+          </view>
+        </view>
+      </block>
     </view>
   </view>
 </block>

@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/sreach/sreach",
-    "pages/index/index",
-    "pages/dingzhi/dingzhi",
     "pages/position/position",
+    "pages/index/index",
+    "pages/sreach/sreach",
+    "pages/dingzhi/dingzhi",
     "pages/me/me",
     "pages/details/details"
   ],

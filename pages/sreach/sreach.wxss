@@ -144,6 +144,7 @@ page {
 .product_img image {
   display: block;
   max-width: 100%;
+  margin: 0 auto;
 }
 
 .product_img {
@@ -155,16 +156,20 @@ page {
   line-height: 66rpx;
 }
 
-.pro_news_list text {
-  padding: 0 6px;
+.pro_news_list .span {
+  padding-right: 6px;
 }
 
-.pro_news_list text i {
+.pro_news_list .icon {
   display: inline-block;
-  width: 24rpx;
-  height: 24rpx;
+  width: 26rpx;
+  height: 26rpx;
   background: url(http://www.51houniao.com/wx/customer/classic/images/small_icon_28.png) no-repeat;
   background-size: 196rpx auto;
-  background-position: -112rpx -264rpx;
   vertical-align: middle;
+  margin-left: 2px;
+}
+
+.season_list {
+  margin-bottom: 20px;
 }

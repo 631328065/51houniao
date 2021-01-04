@@ -1,1 +1,165 @@
 /* pages/position/position.wxss */
+page {
+  background-color: #f2f2f2;
+  font-size: 14px;
+}
+
+.search_div_box {
+  height: 112rpx;
+  border-top: 1px solid #dddcdc;
+  border-bottom: 1px solid #dddcdc;
+  width: 100%;
+  text-align: center;
+  line-height: 112rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: #f2f2f2;
+}
+
+.search_box {
+  width: 76%;
+  height: 70rpx;
+  line-height: 80rpx;
+  background: #fff;
+  border-radius: 20px;
+  text-align: left;
+  padding: 0 2%;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.search_btn {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.input_style {
+  display: inline-block;
+  width: 70%;
+  border: none;
+  background-color: transparent;
+  padding-left: 18rpx;
+  font-family: "微软雅黑";
+}
+
+.map_container {
+  border-bottom: 10px solid #bdc2c3;
+  margin-top: 160rpx;
+}
+
+.map_list {
+  position: relative;
+  height: 422rpx;
+  margin: 24rpx 32rpx;
+}
+
+.map_div {
+  position: absolute;
+}
+
+.country_bg text {
+  position: absolute;
+}
+
+.hot_destination {
+  padding: 0 24rpx;
+}
+
+.hot_des_title {
+  padding: 24rpx 0;
+}
+
+.hot_des_title text {
+  font-size: 18px;
+  color: #445356;
+}
+
+.hot_des_list::before {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+.hot_des_list .list {
+  position: relative;
+  margin-right: 7px;
+  float: left;
+  margin-bottom: 28rpx;
+  width: 48%;
+  height: 202rpx;
+  text-decoration: none;
+  color: #445356;
+}
+
+.hot_des_list .list image {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+
+.introduce {
+  position: absolute;
+  left: 6px;
+  bottom: 2px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.introduce text {
+  font-size: 12px;
+  text-transform: capitalize;
+  margin-left: 6px;
+}
+
+.other_destination {
+  padding: 0 24rpx;
+}
+
+.other_des_title {
+  padding: 24rpx 0;
+}
+
+.other_des_title::before {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+.other_des_title>text {
+  float: left;
+  font-size: 18px;
+  color: #445356;
+}
+
+.des_hint {
+  float: right;
+  font-size: 14px;
+  margin-top: 4px;
+  color: #868686;
+}
+
+.other_des_list {
+  line-height: 36px;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.other_des_list .content::before {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+.other_des_list .content {
+  text-decoration: none;
+  color: #445356;
+  color: #868686;
+  border-bottom: 1px dashed #a4a5a5;
+}
+
+.other_des_list .content>text:nth-child(2) {
+  margin-left: 6px;
+}

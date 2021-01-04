@@ -1,2 +1,55 @@
 <!--pages/position/position.wxml-->
-<text>pages/position/position.wxml</text>
+<view class="search_div_box">
+  <view class="search_box">
+    <i class="iconfont icon-sousuo search_btn"></i>
+    <input type="text" class="input_style" placeholder="请输入您想去的国家或城市"></input>
+  </view>
+</view>
+
+<view class="map_container">
+  <view class="map_list">
+    <block wx:for="{{country_bg}}" wx:key="country_bg">
+      <view class="map_div"
+        style="width: {{item.width}};height: {{item.height}};background: {{item.pic}};z-index: {{item.zIndex}};left: {{item.left}};top: {{item.top}};color:{{item.color}}"
+        bindtap="hangdelCountry" data-country="{{item.country}}" data-suf="{{item.suf}}">
+        <view class="country_bg">
+          <text style="left: {{item.textLeft}};top: {{item.textTop}};z-index: {{item.zIndex}};">{{item.country}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view class="hot_destination">
+  <view class="hot_des_title">
+    <text>{{hot_country}}热门目的地</text>
+  </view>
+  <view class="hot_des_list">
+    <block wx:for="{{hot_country_list}}" wx:key="hot_country_list">
+      <view class="list">
+        <image src="{{item.country_pic_url}}"></image>
+        <view class="introduce">
+          {{item.country}}
+          <text>{{item.country_en}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view class="other_destination">
+  <view class="other_des_title">
+    <text>{{hot_country}}其它目的地</text>
+    <view class="des_hint">
+      <text>拼音首字母排序</text>
+    </view>
+  </view>
+  <view class="other_des_list">
+    <block wx:for="{{other_country_list}}" wx:key="other_country_list">
+      <view class="content">
+        <text>{{item.country}}</text>
+        <text>{{item.country_en}}</text>
+      </view>
+    </block>
+  </view>
+</view>
